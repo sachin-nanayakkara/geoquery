@@ -1,0 +1,12 @@
+<agm-map [latitude]="34" [longitude]="-113" [zoom]="8">
+    <agm-marker [iconUrl]="icon(point.id)" *ngFor="let point of points | async; trackBy: trackByFn" [latitude]="point.pos.geopoint.latitude" [longitude]="point.pos.geopoint.longitude">
+        <agm-info-window>
+          
+            {{ point.hitMetadata | json }}
+
+        </agm-info-window>
+    </agm-marker>
+    
+</agm-map>
+
+
